@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 import Aut from "../../hoc/Aut/Aut";
-import Display from "../Display/Display";
-import Numbers from "../Numbers/Numbers";
-import Operations from "../Operations/Operations";
+import Display from "../../components/Display/Display";
+import Numbers from "../../components/Numbers/Numbers";
+import Operations from "../../components/Operations/Operations";
 
 class Calculator extends Component {
   render() {

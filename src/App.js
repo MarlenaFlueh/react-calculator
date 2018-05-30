@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Layout from "./hoc/Layout/Layout";
-import Calculator from "./components/Calculator/Calculator";
+import Calculator from "./containers/Calculator/Calculator";
 
 class App extends Component {
   render() {
