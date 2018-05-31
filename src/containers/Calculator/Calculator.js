@@ -7,14 +7,21 @@ import Operations from "../../components/Operations/Operations";
 
 class Calculator extends Component {
   state = {
-    display: 1787
+    display: "0"
   };
+
+  changeDisplayHandler = value =>
+    this.state.display === "0"
+      ? this.setState({ display: value })
+      : this.setState(prevState => {
+          return { display: prevState.display + value.toString() };
+        });
 
   render() {
     return (
       <Aut>
         <Display value={this.state.display} />
-        <Numbers />
+        <Numbers clicked={this.changeDisplayHandler} />
         <Operations />
       </Aut>
     );
