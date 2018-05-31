@@ -31,6 +31,15 @@ const numbers = props => (
     <div className={classes.Item3} onClick={() => props.clicked(3)}>
       3
     </div>
+    <div className={classes.Item4} onClick={() => props.clicked(0)}>
+      0
+    </div>
+    <div className={classes.Item4} onClick={() => props.clicked(".")}>
+      .
+    </div>
+    <div className={classes.Item4} onClick={() => props.clicked("=")}>
+      =
+    </div>
   </div>
 );
 

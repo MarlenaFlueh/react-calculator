@@ -7,22 +7,27 @@ import Operations from "../../components/Operations/Operations";
 
 class Calculator extends Component {
   state = {
-    display: "0"
+    display: 0
   };
 
   changeDisplayHandler = value =>
-    this.state.display === "0"
+    this.state.display === 0 && typeof value === "number"
       ? this.setState({ display: value })
       : this.setState(prevState => {
           return { display: prevState.display + value.toString() };
         });
+
+  deleteDisplayHandler = () => this.setState({ display: 0 });
 
   render() {
     return (
       <Aut>
         <Display value={this.state.display} />
         <Numbers clicked={this.changeDisplayHandler} />
-        <Operations />
+        <Operations
+          deleted={this.deleteDisplayHandler}
+          clicked={this.changeDisplayHandler}
+        />
       </Aut>
     );
   }
