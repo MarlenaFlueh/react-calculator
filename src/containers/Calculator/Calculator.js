@@ -4,6 +4,9 @@ import Aut from "../../hoc/Aut/Aut";
 import Display from "../../components/Display/Display";
 import Numbers from "../../components/Numbers/Numbers";
 import Operations from "../../components/Operations/Operations";
+import CalculatorLogic from "./CalculatorLogik/CalculatorLogic";
+
+const calculator = new CalculatorLogic();
 
 class Calculator extends Component {
   state = {
@@ -17,7 +20,11 @@ class Calculator extends Component {
           return { display: prevState.display + value.toString() };
         });
 
-  deleteDisplayHandler = () => this.setState({ display: 0 });
+  deleteDisplayHandler = () => {
+    calculator.clear();
+
+    this.setState({ display: calculator.getHistory() });
+  };
 
   render() {
     return (
