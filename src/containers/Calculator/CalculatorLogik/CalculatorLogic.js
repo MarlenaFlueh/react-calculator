@@ -18,6 +18,10 @@ class CalculatorLogic {
     cache = [];
   }
 
+  inputValue(number) {
+    currentValue += number;
+  }
+
   getCache() {
     return cache.join();
   }

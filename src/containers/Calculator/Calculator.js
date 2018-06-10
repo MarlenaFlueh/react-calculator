@@ -10,29 +10,30 @@ const calculator = new CalculatorLogic();
 
 class Calculator extends Component {
   state = {
-    display: 0
+    display: ""
   };
 
-  changeDisplayHandler = value =>
-    this.state.display === 0 && typeof value === "number"
-      ? this.setState({ display: value })
-      : this.setState(prevState => {
-          return { display: prevState.display + value.toString() };
-        });
+  handleOnNumber = value => {
+    calculator.inputValue(value);
 
-  deleteDisplayHandler = () => {
+    this.setState({ display: calculator.getCurrentValue() });
+  };
+
+  handleOnDelete = () => {
     calculator.clear();
 
-    this.setState({ display: calculator.getHistory() });
+    this.setState(() => ({
+      display: calculator.getCurrentValue()
+    }));
   };
 
   render() {
     return (
       <Aut>
         <Display value={this.state.display} />
-        <Numbers clicked={this.changeDisplayHandler} />
+        <Numbers clicked={this.handleOnNumber} />
         <Operations
-          deleted={this.deleteDisplayHandler}
+          deleted={this.handleOnDelete}
           clicked={this.changeDisplayHandler}
         />
       </Aut>
