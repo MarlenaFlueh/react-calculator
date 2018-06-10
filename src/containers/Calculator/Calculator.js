@@ -31,6 +31,18 @@ class Calculator extends Component {
     this.setState({ display: calculator.getCurrentValue().toString() });
   };
 
+  handleOnMultiply = () => {
+    calculator.multiply();
+
+    this.setState({ display: calculator.getCurrentValue().toString() });
+  };
+
+  handleOnDivide = () => {
+    calculator.divide();
+
+    this.setState({ display: calculator.getCurrentValue().toString() });
+  };
+
   handleOnEqual = () => {
     calculator.equal();
 
@@ -54,6 +66,8 @@ class Calculator extends Component {
           deleted={this.handleOnDelete}
           added={this.handleOnAdd}
           minused={this.handleOnMinus}
+          multiplied={this.handleOnMultiply}
+          divided={this.handleOnDivide}
         />
       </Aut>
     );

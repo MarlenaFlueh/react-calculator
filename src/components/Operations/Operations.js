@@ -13,10 +13,10 @@ const operations = props => (
     <div className={classes.Operator2} onClick={props.minused}>
       -
     </div>
-    <div className={classes.Operator3} onClick={() => props.clicked("x")}>
+    <div className={classes.Operator3} onClick={props.multiplied}>
       x
     </div>
-    <div className={classes.Operator4} onClick={() => props.clicked("/")}>
+    <div className={classes.Operator4} onClick={props.divided}>
       /
     </div>
   </div>

@@ -27,6 +27,18 @@ class CalculatorLogic {
     currentValue = "";
   }
 
+  multiply() {
+    cache.push(currentValue);
+    cache.push("*");
+    currentValue = "";
+  }
+
+  divide() {
+    cache.push(currentValue);
+    cache.push("/");
+    currentValue = "";
+  }
+
   equal() {
     cache.push(currentValue);
     const tempResult = cache.join(" ");
