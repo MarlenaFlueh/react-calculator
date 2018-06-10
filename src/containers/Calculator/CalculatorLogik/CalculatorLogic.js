@@ -21,6 +21,12 @@ class CalculatorLogic {
     currentValue = "";
   }
 
+  minus() {
+    cache.push(currentValue);
+    cache.push("-");
+    currentValue = "";
+  }
+
   equal() {
     cache.push(currentValue);
     const tempResult = cache.join(" ");

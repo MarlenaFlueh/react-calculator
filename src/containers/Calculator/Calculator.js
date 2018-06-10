@@ -25,6 +25,12 @@ class Calculator extends Component {
     this.setState({ display: calculator.getCurrentValue().toString() });
   };
 
+  handleOnMinus = () => {
+    calculator.minus();
+
+    this.setState({ display: calculator.getCurrentValue().toString() });
+  };
+
   handleOnEqual = () => {
     calculator.equal();
 
@@ -44,7 +50,11 @@ class Calculator extends Component {
       <Aut>
         <Display value={this.state.display} />
         <Numbers clicked={this.handleOnNumber} equaled={this.handleOnEqual} />
-        <Operations deleted={this.handleOnDelete} added={this.handleOnAdd} />
+        <Operations
+          deleted={this.handleOnDelete}
+          added={this.handleOnAdd}
+          minused={this.handleOnMinus}
+        />
       </Aut>
     );
   }

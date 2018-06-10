@@ -10,7 +10,7 @@ const operations = props => (
     <div className={classes.Operator1} onClick={props.deleted}>
       AC
     </div>
-    <div className={classes.Operator2} onClick={() => props.clicked("-")}>
+    <div className={classes.Operator2} onClick={props.minused}>
       -
     </div>
     <div className={classes.Operator3} onClick={() => props.clicked("x")}>
