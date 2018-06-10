@@ -12,6 +12,12 @@ class CalculatorLogic {
   }
 
   inputValue(number) {
+    if (result !== "") {
+      result = "";
+      currentValue = "";
+      cache = [];
+    }
+
     currentValue += number;
   }
 
