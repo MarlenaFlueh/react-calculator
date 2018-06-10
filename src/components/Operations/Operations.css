@@ -31,6 +31,7 @@
 
 .Operator1:hover {
   background-color: rgb(219, 214, 214);
+  cursor: pointer;
 }
 
 .Operator2 {
@@ -43,6 +44,7 @@
 
 .Operator2:hover {
   background-color: rgb(219, 214, 214);
+  cursor: pointer;
 }
 .Operator3 {
   grid-row: 3 / span 1;
@@ -54,6 +56,7 @@
 
 .Operator3:hover {
   background-color: rgb(219, 214, 214);
+  cursor: pointer;
 }
 
 .Operator4 {
@@ -66,4 +69,5 @@
 
 .Operator4:hover {
   background-color: rgb(219, 214, 214);
+  cursor: pointer;
 }

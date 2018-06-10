@@ -1,25 +1,38 @@
+import math from "mathjs";
+
 let currentValue = "";
 let result = "";
-let history = [];
 let cache = [];
 
 class CalculatorLogic {
   constructor() {
     currentValue = "";
     result = "";
-    history = [];
-    cache = [];
-  }
-
-  clear() {
-    currentValue = "";
-    result = "";
-    history = [];
     cache = [];
   }
 
   inputValue(number) {
     currentValue += number;
+  }
+
+  add() {
+    cache.push(currentValue);
+    cache.push("+");
+    currentValue = "";
+  }
+
+  equal() {
+    cache.push(currentValue);
+    const tempResult = cache.join(" ");
+    result = math.eval(tempResult);
+
+    currentValue = "";
+  }
+
+  clear() {
+    currentValue = "";
+    result = "";
+    cache = [];
   }
 
   getCache() {
@@ -32,10 +45,6 @@ class CalculatorLogic {
 
   getCurrentValue() {
     return currentValue;
-  }
-
-  getHistory() {
-    return history;
   }
 }
 

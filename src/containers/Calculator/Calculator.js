@@ -19,6 +19,18 @@ class Calculator extends Component {
     this.setState({ display: calculator.getCurrentValue() });
   };
 
+  handleOnAdd = () => {
+    calculator.add();
+
+    this.setState({ display: calculator.getCurrentValue().toString() });
+  };
+
+  handleOnEqual = () => {
+    calculator.equal();
+
+    this.setState({ display: calculator.getResult() });
+  };
+
   handleOnDelete = () => {
     calculator.clear();
 
@@ -31,11 +43,8 @@ class Calculator extends Component {
     return (
       <Aut>
         <Display value={this.state.display} />
-        <Numbers clicked={this.handleOnNumber} />
-        <Operations
-          deleted={this.handleOnDelete}
-          clicked={this.changeDisplayHandler}
-        />
+        <Numbers clicked={this.handleOnNumber} equaled={this.handleOnEqual} />
+        <Operations deleted={this.handleOnDelete} added={this.handleOnAdd} />
       </Aut>
     );
   }

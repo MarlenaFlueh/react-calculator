@@ -19,6 +19,7 @@
 
 .Item1:hover {
   background-color: rgb(219, 214, 214);
+  cursor: pointer;
 }
 
 .Item2 {
@@ -31,6 +32,7 @@
 
 .Item2:hover {
   background-color: rgb(219, 214, 214);
+  cursor: pointer;
 }
 
 .Item3 {
@@ -43,6 +45,7 @@
 
 .Item3:hover {
   background-color: rgb(219, 214, 214);
+  cursor: pointer;
 }
 
 .Item4 {
@@ -55,4 +58,5 @@
 
 .Item4:hover {
   background-color: rgb(219, 214, 214);
+  cursor: pointer;
 }

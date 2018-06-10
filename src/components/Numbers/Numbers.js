@@ -37,7 +37,7 @@ const numbers = props => (
     <div className={classes.Item4} onClick={() => props.clicked(".")}>
       .
     </div>
-    <div className={classes.Item4} onClick={() => props.clicked("=")}>
+    <div className={classes.Item4} onClick={props.equaled}>
       =
     </div>
   </div>

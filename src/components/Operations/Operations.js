@@ -4,7 +4,7 @@ import classes from "./Operations.css";
 
 const operations = props => (
   <div className={classes.Operations}>
-    <div className={classes.Operator1} onClick={() => props.clicked("+")}>
+    <div className={classes.Operator1} onClick={props.added}>
       +
     </div>
     <div className={classes.Operator1} onClick={props.deleted}>
