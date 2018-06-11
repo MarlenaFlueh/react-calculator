@@ -58,7 +58,7 @@ class Calculator extends Component {
   render() {
     return (
       <Aut>
-        <Display value={this.state.display} />
+        <Display>{this.state.display}</Display>
         <Numbers clicked={this.handleOnNumber} equaled={this.handleOnEqual} />
         <Operations
           deleted={this.handleOnDelete}

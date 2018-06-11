@@ -1,7 +1,14 @@
-import React from "react";
+import styled from "styled-components";
 
-import classes from "./Display.css";
+const Display = styled.div`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: white;
+  font-size: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+`;
 
-const display = props => <div className={classes.Display}>{props.value}</div>;
-
-export default display;
+export default Display;
