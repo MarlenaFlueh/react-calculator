@@ -1,17 +1,15 @@
 import math from "mathjs";
 
 class CalculatorLogic {
-  constructor() {
-    this.currentValue = "";
-    this.result = "";
-    this.cache = [];
-  }
+  result = "";
+  cache = [];
+  currentValue = "";
 
   inputValue(number) {
     if (this.result) {
       this.result = "";
       this.currentValue = "";
-      this.this.cache = [];
+      this.cache = [];
     }
 
     this.currentValue += number;
@@ -67,5 +65,4 @@ class CalculatorLogic {
     return this.currentValue;
   }
 }
-
-export default CalculatorLogic;
+export default new CalculatorLogic();
