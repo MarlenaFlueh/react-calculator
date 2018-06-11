@@ -1,74 +1,70 @@
 import math from "mathjs";
 
-let currentValue = "";
-let result = "";
-let cache = [];
-
 class CalculatorLogic {
   constructor() {
-    currentValue = "";
-    result = "";
-    cache = [];
+    this.currentValue = "";
+    this.result = "";
+    this.cache = [];
   }
 
   inputValue(number) {
-    if (result !== "") {
-      result = "";
-      currentValue = "";
-      cache = [];
+    if (this.result) {
+      this.result = "";
+      this.currentValue = "";
+      this.this.cache = [];
     }
 
-    currentValue += number;
+    this.currentValue += number;
   }
 
   add() {
-    cache.push(currentValue);
-    cache.push("+");
-    currentValue = "";
+    this.cache.push(this.currentValue);
+    this.cache.push("+");
+    this.currentValue = "";
   }
 
   minus() {
-    cache.push(currentValue);
-    cache.push("-");
-    currentValue = "";
+    this.cache.push(this.currentValue);
+    this.cache.push("-");
+    this.currentValue = "";
   }
 
   multiply() {
-    cache.push(currentValue);
-    cache.push("*");
-    currentValue = "";
+    this.cache.push(this.currentValue);
+    this.cache.push("*");
+    this.currentValue = "";
   }
 
   divide() {
-    cache.push(currentValue);
-    cache.push("/");
-    currentValue = "";
+    this.cache.push(this.currentValue);
+    this.cache.push("/");
+    this.currentValue = "";
   }
 
   equal() {
-    cache.push(currentValue);
-    const tempResult = cache.join(" ");
-    result = math.eval(tempResult);
+    this.cache.push(this.currentValue);
+    const tempResult = this.cache.join(" ");
+    this.result = math.eval(tempResult);
 
-    currentValue = "";
+    this.currentValue = "";
   }
 
   clear() {
-    currentValue = "";
-    result = "";
-    cache = [];
+    this.currentValue = "";
+    this.result = "";
+    this.cache = [];
   }
 
   getCache() {
-    return cache.join();
+    return this.cache.join();
   }
 
   getResult() {
-    return result;
+    return this.result;
   }
 
   getCurrentValue() {
-    return currentValue;
+    return this.currentValue;
   }
 }
 
