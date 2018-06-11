@@ -1,46 +1,54 @@
-import React from "react";
+import React, { Component } from "react";
+import styled from "styled-components";
 
-import classes from "./Numbers.css";
+const Num = styled.div`
+  background-color: #d3b9b9;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "item7 item8 item9" "item4 item5 item6" "item1 item2 item3"
+    "item0 itemPoint itemEqual";
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  padding: 20px;
+  font-size: 30px;
+`;
 
-const numbers = props => (
-  <div className={classes.Numbers}>
-    <div className={classes.Item1} onClick={() => props.clicked(7)}>
-      7
-    </div>
-    <div className={classes.Item1} onClick={() => props.clicked(8)}>
-      8
-    </div>
-    <div className={classes.Item1} onClick={() => props.clicked(9)}>
-      9
-    </div>
-    <div className={classes.Item2} onClick={() => props.clicked(4)}>
-      4
-    </div>
-    <div className={classes.Item2} onClick={() => props.clicked(5)}>
-      5
-    </div>
-    <div className={classes.Item2} onClick={() => props.clicked(6)}>
-      6
-    </div>
-    <div className={classes.Item3} onClick={() => props.clicked(1)}>
-      1
-    </div>
-    <div className={classes.Item3} onClick={() => props.clicked(2)}>
-      2
-    </div>
-    <div className={classes.Item3} onClick={() => props.clicked(3)}>
-      3
-    </div>
-    <div className={classes.Item4} onClick={() => props.clicked(0)}>
-      0
-    </div>
-    <div className={classes.Item4} onClick={() => props.clicked(".")}>
-      .
-    </div>
-    <div className={classes.Item4} onClick={props.equaled}>
-      =
-    </div>
-  </div>
-);
+const GridItem = styled.div`
+  grid-area: ${props => props.item};
+  background-color: rgb(241, 236, 236);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-export default numbers;
+  :hover {
+    background-color: rgb(219, 214, 214);
+    cursor: pointer;
+`;
+
+class Numbers extends Component {
+  render() {
+    return (
+      <Num>
+        {[7, 8, 9, 4, 5, 6, 1, 2, 3, 0].map(num => (
+          <GridItem
+            key={num}
+            item={"item" + { num }}
+            onClick={() => this.props.clicked(num)}
+          >
+            {num}
+          </GridItem>
+        ))}
+        <GridItem item="itemPoint" onClick={() => this.props.clicked(".")}>
+          .
+        </GridItem>
+        <GridItem item="itemEqual" onClick={this.props.equaled}>
+          =
+        </GridItem>
+      </Num>
+    );
+  }
+}
+
+export default Numbers;
