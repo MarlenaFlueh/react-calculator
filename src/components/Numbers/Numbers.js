@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Num = styled.div`
@@ -27,28 +27,26 @@ const GridItem = styled.div`
     cursor: pointer;
 `;
 
-class Numbers extends Component {
-  render() {
-    return (
-      <Num>
-        {[7, 8, 9, 4, 5, 6, 1, 2, 3, 0].map(num => (
-          <GridItem
-            key={num}
-            item={"item" + { num }}
-            onClick={() => this.props.clicked(num)}
-          >
-            {num}
-          </GridItem>
-        ))}
-        <GridItem item="itemPoint" onClick={() => this.props.clicked(".")}>
-          .
-        </GridItem>
-        <GridItem item="itemEqual" onClick={this.props.equaled}>
-          =
-        </GridItem>
-      </Num>
-    );
-  }
-}
+const numArray = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
 
-export default Numbers;
+const numbers = props => (
+  <Num>
+    {numArray.map(num => (
+      <GridItem
+        key={num}
+        item={"item" + { num }}
+        onClick={() => props.clicked(num)}
+      >
+        {num}
+      </GridItem>
+    ))}
+    <GridItem item="itemPoint" onClick={() => props.clicked(".")}>
+      .
+    </GridItem>
+    <GridItem item="itemEqual" onClick={props.equaled}>
+      =
+    </GridItem>
+  </Num>
+);
+
+export default numbers;

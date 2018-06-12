@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
-import Aut from "../../hoc/Aut/Aut";
 import Display from "../../components/Display/Display";
 import Numbers from "../../components/Numbers/Numbers";
 import Operations from "../../components/Operations/Operations";
@@ -57,7 +56,7 @@ class Calculator extends Component {
 
   render() {
     return (
-      <Aut>
+      <Fragment>
         <Display>{this.state.display}</Display>
         <Numbers clicked={this.handleOnNumber} equaled={this.handleOnEqual} />
         <Operations
@@ -67,7 +66,7 @@ class Calculator extends Component {
           multiplied={this.handleOnMultiply}
           divided={this.handleOnDivide}
         />
-      </Aut>
+      </Fragment>
     );
   }
 }
