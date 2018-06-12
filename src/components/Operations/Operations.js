@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const OperationContainer = styled.div`
@@ -26,30 +26,22 @@ const Operator = styled.div`
   }
 `;
 
-class Operations extends Component {
-  render() {
-    return (
-      <OperationContainer>
-        {[
-          ["deleted", "AC"],
-          ["added", "+"],
-          ["minused", "-"],
-          ["multiplied", "*"],
-          ["divided", "/"]
-        ].map(operator => {
-          return (
-            <Operator
-              key={operator[0]}
-              item={operator[0]}
-              onClick={this.props.added}
-            >
-              {operator[1]}
-            </Operator>
-          );
-        })}
-      </OperationContainer>
-    );
-  }
-}
+const operatorObj = {
+  deleted: "AC",
+  added: "+",
+  minused: "-",
+  multiplied: "*",
+  divided: "/"
+};
 
-export default Operations;
+const operations = props => (
+  <OperationContainer>
+    {Object.keys(operatorObj).map(key => (
+      <Operator key={key} item={key} onClick={props[key]}>
+        {operatorObj[key]}
+      </Operator>
+    ))}
+  </OperationContainer>
+);
+
+export default operations;
