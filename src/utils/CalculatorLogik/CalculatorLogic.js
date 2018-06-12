@@ -7,36 +7,32 @@ class CalculatorLogic {
 
   inputValue(number) {
     if (this.result) {
-      this.result = "";
-      this.currentValue = "";
-      this.cache = [];
+      this.clear();
     }
 
     this.currentValue += number;
   }
 
-  add() {
+  operatorFunction(operator) {
     this.cache.push(this.currentValue);
-    this.cache.push("+");
+    this.cache.push(operator);
     this.currentValue = "";
+  }
+
+  add() {
+    this.operatorFunction("+");
   }
 
   minus() {
-    this.cache.push(this.currentValue);
-    this.cache.push("-");
-    this.currentValue = "";
+    this.operatorFunction("-");
   }
 
   multiply() {
-    this.cache.push(this.currentValue);
-    this.cache.push("*");
-    this.currentValue = "";
+    this.operatorFunction("*");
   }
 
   divide() {
-    this.cache.push(this.currentValue);
-    this.cache.push("/");
-    this.currentValue = "";
+    this.operatorFunction("/");
   }
 
   equal() {
@@ -52,17 +48,6 @@ class CalculatorLogic {
     this.result = "";
     this.cache = [];
   }
-
-  getCache() {
-    return this.cache.join();
-  }
-
-  getResult() {
-    return this.result;
-  }
-
-  getCurrentValue() {
-    return this.currentValue;
-  }
 }
+
 export default new CalculatorLogic();

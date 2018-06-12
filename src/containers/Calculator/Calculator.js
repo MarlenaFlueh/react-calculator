@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 import Display from "../../components/Display/Display";
 import Numbers from "../../components/Numbers/Numbers";
 import Operations from "../../components/Operations/Operations";
-import calculator from "./CalculatorLogik/CalculatorLogic";
+import calculator from "./../../utils/CalculatorLogik/CalculatorLogic";
 
 class Calculator extends Component {
   state = {
@@ -13,45 +13,45 @@ class Calculator extends Component {
   handleOnNumber = value => {
     calculator.inputValue(value);
 
-    this.setState({ display: calculator.getCurrentValue() });
+    this.setState({ display: calculator.currentValue });
   };
 
   handleOnAdd = () => {
     calculator.add();
 
-    this.setState({ display: calculator.getCurrentValue().toString() });
+    this.setState({ display: calculator.currentValue });
   };
 
   handleOnMinus = () => {
     calculator.minus();
 
-    this.setState({ display: calculator.getCurrentValue().toString() });
+    this.setState({ display: calculator.currentValue });
   };
 
   handleOnMultiply = () => {
     calculator.multiply();
 
-    this.setState({ display: calculator.getCurrentValue().toString() });
+    this.setState({ display: calculator.currentValue });
   };
 
   handleOnDivide = () => {
     calculator.divide();
 
-    this.setState({ display: calculator.getCurrentValue().toString() });
+    this.setState({ display: calculator.currentValue });
   };
 
   handleOnEqual = () => {
     calculator.equal();
 
-    this.setState({ display: calculator.getResult() });
+    this.setState({ display: calculator.result });
   };
 
   handleOnDelete = () => {
     calculator.clear();
 
-    this.setState(() => ({
-      display: calculator.getCurrentValue()
-    }));
+    this.setState({
+      display: calculator.currentValue
+    });
   };
 
   render() {
