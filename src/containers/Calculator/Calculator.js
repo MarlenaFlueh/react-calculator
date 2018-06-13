@@ -54,6 +54,14 @@ class Calculator extends Component {
     });
   };
 
+  handleOnShort = () => {
+    calculator.short();
+
+    this.setState({
+      display: calculator.currentValue
+    });
+  };
+
   render() {
     return (
       <Fragment>
@@ -65,6 +73,7 @@ class Calculator extends Component {
           minused={this.handleOnMinus}
           multiplied={this.handleOnMultiply}
           divided={this.handleOnDivide}
+          shortened={this.handleOnShort}
         />
       </Fragment>
     );

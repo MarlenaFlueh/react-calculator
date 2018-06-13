@@ -48,6 +48,13 @@ class CalculatorLogic {
     this.result = "";
     this.cache = [];
   }
+
+  short() {
+    this.currentValue = this.currentValue.substring(
+      0,
+      this.currentValue.length - 1
+    );
+  }
 }
 
 export default new CalculatorLogic();

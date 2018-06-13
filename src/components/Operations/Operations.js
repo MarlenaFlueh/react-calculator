@@ -5,8 +5,8 @@ const OperationContainer = styled.div`
   background-color: rgb(253, 251, 251);
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas: "deleted" "added" "minused" "multiplied" "divided";
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "deleted shortened" "added minused" "multiplied divided";
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   padding: 20px;
@@ -28,6 +28,7 @@ const Operator = styled.div`
 
 const operatorObj = {
   deleted: "AC",
+  shortened: "CE",
   added: "+",
   minused: "-",
   multiplied: "*",
