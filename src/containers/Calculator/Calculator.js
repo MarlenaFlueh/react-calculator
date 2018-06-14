@@ -62,6 +62,14 @@ class Calculator extends Component {
     });
   };
 
+  handleOnBracketOpen = () => {
+    this.handleOnNumber("(");
+  };
+
+  handleOnBracketClose = () => {
+    this.handleOnNumber(")");
+  };
+
   render() {
     return (
       <Fragment>
@@ -74,6 +82,8 @@ class Calculator extends Component {
           multiplied={this.handleOnMultiply}
           divided={this.handleOnDivide}
           shortened={this.handleOnShort}
+          bracketOpen={this.handleOnBracketOpen}
+          bracketClose={this.handleOnBracketClose}
         />
       </Fragment>
     );

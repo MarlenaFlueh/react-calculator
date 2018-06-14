@@ -6,7 +6,7 @@ const OperationContainer = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto;
-  grid-template-areas: "deleted shortened" "added minused" "multiplied divided";
+  grid-template-areas: "deleted shortened" "added minused" "multiplied divided" "bracketOpen bracketClose";
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   padding: 20px;
@@ -32,7 +32,9 @@ const operatorObj = {
   added: "+",
   minused: "-",
   multiplied: "*",
-  divided: "/"
+  divided: "/",
+  bracketOpen: "(",
+  bracketClose: ")"
 };
 
 const operations = props => (

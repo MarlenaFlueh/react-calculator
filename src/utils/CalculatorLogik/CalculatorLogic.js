@@ -40,7 +40,8 @@ class CalculatorLogic {
     const tempResult = this.cache.join(" ");
     this.result = math.eval(tempResult);
 
-    this.currentValue = "";
+    this.currentValue = this.result;
+    this.cache = [];
   }
 
   clear() {
