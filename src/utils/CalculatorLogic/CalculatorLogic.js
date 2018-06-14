@@ -5,20 +5,20 @@ class CalculatorLogic {
   cache = [];
   currentValue = "";
 
-  inputValue(number) {
+  inputValue = number => {
     if (this.result) {
       this.currentValue = "";
       this.result = "";
     }
 
     this.currentValue += number;
-  }
+  };
 
-  operatorFunction(operator) {
+  operatorFunction = operator => {
     this.cache.push(this.currentValue);
     this.cache.push(operator);
     this.currentValue = "";
-  }
+  };
 
   add() {
     this.operatorFunction("+");

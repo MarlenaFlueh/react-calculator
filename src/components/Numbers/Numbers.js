@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Num = styled.div`
+const NumberGrid = styled.div`
   background-color: #d3b9b9;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -27,10 +27,10 @@ const GridItem = styled.div`
     cursor: pointer;
 `;
 
-const numArray = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
+const numArray = ["7", "8", " 9", "4", "5", "6", "1", "2", "3", "0"];
 
-const numbers = props => (
-  <Num>
+const Numbers = props => (
+  <NumberGrid>
     {numArray.map(num => (
       <GridItem
         key={num}
@@ -46,7 +46,7 @@ const numbers = props => (
     <GridItem item="itemEqual" onClick={props.equaled}>
       =
     </GridItem>
-  </Num>
+  </NumberGrid>
 );
 
-export default numbers;
+export default Numbers;

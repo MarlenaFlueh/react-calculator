@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const OperationContainer = styled.div`
+const OperationGrid = styled.div`
   background-color: rgb(253, 251, 251);
   display: grid;
   grid-template-columns: auto auto;
@@ -13,7 +13,7 @@ const OperationContainer = styled.div`
   font-size: 30px;
 `;
 
-const Operator = styled.div`
+const GridItem = styled.div`
   grid-area: ${props => props.item};
   background-color: rgb(241, 236, 236);
   display: flex;
@@ -37,14 +37,14 @@ const operatorObj = {
   bracketClose: ")"
 };
 
-const operations = props => (
-  <OperationContainer>
+const Operations = props => (
+  <OperationGrid>
     {Object.keys(operatorObj).map(key => (
-      <Operator key={key} item={key} onClick={props[key]}>
+      <GridItem key={key} item={key} onClick={props[key]}>
         {operatorObj[key]}
-      </Operator>
+      </GridItem>
     ))}
-  </OperationContainer>
+  </OperationGrid>
 );
 
-export default operations;
+export default Operations;

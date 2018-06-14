@@ -3,63 +3,70 @@ import React, { Component, Fragment } from "react";
 import Display from "../../components/Display/Display";
 import Numbers from "../../components/Numbers/Numbers";
 import Operations from "../../components/Operations/Operations";
-import calculator from "./../../utils/CalculatorLogik/CalculatorLogic";
+import calculator from "./../../utils/CalculatorLogic/CalculatorLogic";
 
 class Calculator extends Component {
   state = {
-    display: ""
+    display: "",
+    history: ""
   };
+
+  setStateFunction() {
+    this.setState({
+      display: calculator.currentValue,
+      history: calculator.cache.join(" ")
+    });
+  }
 
   handleOnNumber = value => {
     calculator.inputValue(value);
 
-    this.setState({ display: calculator.currentValue });
+    this.setStateFunction();
   };
 
   handleOnAdd = () => {
     calculator.add();
 
-    this.setState({ display: calculator.currentValue });
+    this.setStateFunction();
   };
 
   handleOnMinus = () => {
     calculator.minus();
 
-    this.setState({ display: calculator.currentValue });
+    this.setStateFunction();
   };
 
   handleOnMultiply = () => {
     calculator.multiply();
 
-    this.setState({ display: calculator.currentValue });
+    this.setStateFunction();
   };
 
   handleOnDivide = () => {
     calculator.divide();
 
-    this.setState({ display: calculator.currentValue });
+    this.setStateFunction();
   };
 
   handleOnEqual = () => {
     calculator.equal();
 
-    this.setState({ display: calculator.result });
+    this.setState({
+      display: calculator.result,
+      history: calculator.cache.join(" ")
+    });
   };
 
   handleOnDelete = () => {
     calculator.clear();
 
-    this.setState({
-      display: calculator.currentValue
-    });
+    this.setStateFunction();
   };
 
   handleOnShort = () => {
     calculator.short();
 
-    this.setState({
-      display: calculator.currentValue
-    });
+    this.setStateFunction();
   };
 
   handleOnBracketOpen = () => {
@@ -73,7 +80,7 @@ class Calculator extends Component {
   render() {
     return (
       <Fragment>
-        <Display>{this.state.display}</Display>
+        <Display history={this.state.history} nums={this.state.display} />
         <Numbers clicked={this.handleOnNumber} equaled={this.handleOnEqual} />
         <Operations
           deleted={this.handleOnDelete}
