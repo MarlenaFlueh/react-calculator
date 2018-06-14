@@ -7,7 +7,8 @@ class CalculatorLogic {
 
   inputValue(number) {
     if (this.result) {
-      this.clear();
+      this.currentValue = "";
+      this.result = "";
     }
 
     this.currentValue += number;
