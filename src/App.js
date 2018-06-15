@@ -1,16 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
-import Layout from "./hoc/Layout/Layout";
-import Calculator from "./containers/Calculator/Calculator";
+import Layout from "./hoc/Layout";
+import Calculator from "./containers/Calculator";
 
-class App extends Component {
-  render() {
-    return (
-      <Layout>
-        <Calculator />
-      </Layout>
-    );
-  }
-}
+const App = () => (
+  <Layout>
+    <Calculator />
+  </Layout>
+);
 
 export default App;

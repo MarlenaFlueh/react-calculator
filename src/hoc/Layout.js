@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const LayoutContainer = styled.div`
+const Layout = styled.div`
   display: inline-grid;
   grid-template-columns: 300px 200px;
   grid-template-rows: 100px 300px;
@@ -11,7 +10,5 @@ const LayoutContainer = styled.div`
   padding: 30px;
   font-family: sans-serif;
 `;
-
-const Layout = props => <LayoutContainer>{props.children}</LayoutContainer>;
 
 export default Layout;

@@ -1,22 +1,22 @@
 import React, { Component, Fragment } from "react";
 
-import Display from "../../components/Display/Display";
-import Numbers from "../../components/Numbers/Numbers";
-import Operations from "../../components/Operations/Operations";
-import calculator from "./../../utils/CalculatorLogic/CalculatorLogic";
+import Display from "../components/Display";
+import Numbers from "../components/Numbers";
+import Operations from "../components/Operations";
+import calculator from "../utils/CalculatorLogic";
 
 class Calculator extends Component {
   state = {
-    display: "",
-    history: ""
+    display: null,
+    history: null
   };
 
-  setStateFunction() {
+  setStateFunction = () => {
     this.setState({
       display: calculator.currentValue,
       history: calculator.cache.join(" ")
     });
-  }
+  };
 
   handleOnNumber = value => {
     calculator.inputValue(value);
