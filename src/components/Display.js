@@ -31,9 +31,4 @@ const Display = props => (
   </DisplayGrid>
 );
 
-Display.defaultProps = {
-  history: "",
-  nums: "0"
-};
-
 export default Display;
