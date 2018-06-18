@@ -27,7 +27,7 @@ const NumberItem = styled.div`
 const Display = props => (
   <DisplayGrid>
     <HistoryItem>{props.history}</HistoryItem>
-    <NumberItem>{props.nums}</NumberItem>
+    <NumberItem>{!props.nums ? "0" : props.nums}</NumberItem>
   </DisplayGrid>
 );
 
